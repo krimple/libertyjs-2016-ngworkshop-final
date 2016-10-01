@@ -1,0 +1,39 @@
+<h3>Edit Task</h3>
+
+<div>
+    <div class="form-group">
+        <label for="task-id"></label>
+        <input id="task-id" disabled [ngModel]="task.id" name="task-id">
+    </div>
+    <div class="form-group">
+        <label for="task-project">Project:</label>
+        <select id="task-project" [(ngModel)]="task.projectId" name="task-project">
+        <option *ngFor="let project of projects" value="{{project.id}}" [attr.selected]="project.id === task.projectId ? '' : null" >{{project.name}}</option>
+    </select>
+    </div>
+    <div class="form-group">
+        <label for="task-order">Order:</label>
+        <input id="task-order" type="number" [(ngModel)]="task.order" name="task-order">
+    </div>
+    <div class="form-group">
+        <label for="task-priority">Priority:</label>
+        <input id="task-priority" type="number" [(ngModel)]="task.priority" name="task-priority">
+    </div>
+    <div class="form-group">
+        <label for="task-duedate">Due Date:</label>
+        <input id="task-duedate" type="date" [(ngModel)]="task.dueDate" name="task-duedate">
+    </div>
+    <div class="form-group">
+        <label for="task-description">Description:</label>
+        <input id="task-description" type="text" [(ngModel)]="task.description" name="task-description">
+    </div>
+    <div class="form-group">
+        <label for="task-completed">Completed:</label>
+        <input id="task-completed" type="checkbox" [(ngModel)]="task.completed" name="task-completed">
+    </div>
+    <div *ngIf="task.completed" class="form-group">
+        <label for="task-completeddate">Completed Date:</label>
+        <input id="task-completeddate" type="date" name="task-completeddate">
+    </div>
+    <button (click)="save()">Save</button>
+</div>

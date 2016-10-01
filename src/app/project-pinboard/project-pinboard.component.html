@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+      <bs-card *ngFor="let project of projects">
+        <div class="card-body">
+          <project [project]="project"></project>
+        </div>
+      </bs-card>
+  </div>
+</div>

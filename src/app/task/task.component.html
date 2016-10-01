@@ -1,0 +1,11 @@
+<span class="small">
+    <i class="fa fa-circle-thin"
+        *ngIf="task.completed !== true"
+        (click)="completeTask(task)"></i>
+    <span *ngIf="task.completed === true">
+        <i class="fa fa-check-circle"></i>
+        ({{ task.completedDate | date:'M/d'}}) -
+    </span>
+    <span [ngClass]="{ 'complete': task.completed }" [innerHTML]='task.description'></span>
+    <a [routerLink]="[ '/task-editor', task.id ]" [queryParams]="{ projectId: task.projectId }">Edit</a>
+</span>

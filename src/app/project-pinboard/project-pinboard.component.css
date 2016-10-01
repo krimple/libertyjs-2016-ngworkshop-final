@@ -1,0 +1,15 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+bs-card {
+    min-height: 10em;
+    min-width: 20em;
+    max-width: 20em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+}
